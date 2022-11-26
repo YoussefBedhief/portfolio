@@ -23,7 +23,7 @@ function Projects({ projects }: Props) {
         projects.filter((project) => project.tag.includes(activeFilter))
       )
     }
-  }, [activeFilter])
+  }, [activeFilter, projects])
 
   console.log(activeProject, activeFilter)
 
