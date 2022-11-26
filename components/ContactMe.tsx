@@ -38,7 +38,9 @@ const ContactMe = ({ pageInfos }: Props) => {
       <div className="absolute top-32 flex flex-col space-y-10">
         <h4 className="text-4xl font-semibold text-center">
           If you like what you see.{" "}
-          <span className="underline decoration-[#7451eb]/50">Let's Talk</span>
+          <span className="underline decoration-[#7451eb]/50">
+            `Let's Talk`
+          </span>
         </h4>
         <div className="space-y-5 md:space-y-10">
           <motion.div
