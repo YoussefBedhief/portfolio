@@ -17,11 +17,11 @@ import { fetchProjects } from "../utils/fetchProjects"
 import { fetchSocials } from "../utils/fetchSocials"
 
 type Props = {
+  experiences: Experience[]
   skills: Skill[]
   social: Social[]
   projects: Project[]
   pageInfos: PageInfo[]
-  experiences: Experience[]
 }
 
 export default function Home({
