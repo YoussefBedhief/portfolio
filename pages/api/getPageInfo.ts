@@ -11,7 +11,7 @@ type Data = {
   pageInfos: PageInfo[]
 }
 
-export default async function handler(
+export default async function getPageInfo(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {

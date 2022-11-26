@@ -14,7 +14,7 @@ type Data = {
   projects: Project[]
 }
 
-export default async function handler(
+export default async function getProjects(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {

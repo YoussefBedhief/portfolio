@@ -11,10 +11,7 @@ type Props = {
 function Projects({ projects }: Props) {
   const [activeFilter, setActiveFilter] = useState<string>("All")
   const [activeProject, setActiveProject] = useState<Project[]>(projects)
-  const handleProjectFilter = (item: string) => {
-    // setActiveFilter(item)
-    // activeFilter === "All" ? setActiveProject(projects) : null
-  }
+
   useEffect(() => {
     if (activeFilter === "All") {
       setActiveProject(projects)
@@ -24,8 +21,6 @@ function Projects({ projects }: Props) {
       )
     }
   }, [activeFilter, projects])
-
-  console.log(activeProject, activeFilter)
 
   return (
     <motion.div

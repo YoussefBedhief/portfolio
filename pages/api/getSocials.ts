@@ -11,7 +11,7 @@ type Data = {
   socials: Social[]
 }
 
-export default async function handler(
+export default async function getSocials(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {

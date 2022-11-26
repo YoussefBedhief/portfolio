@@ -14,7 +14,7 @@ type Data = {
   experiences: Experience[]
 }
 
-export default async function handler(
+export default async function getExperience(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
