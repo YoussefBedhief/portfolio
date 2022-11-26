@@ -17,8 +17,8 @@ import { fetchProjects } from "../utils/fetchProjects"
 import { fetchSocials } from "../utils/fetchSocials"
 
 type Props = {
-  experiences: Experience[]
   skills: Skill[]
+  experiences: Experience[]
   social: Social[]
   projects: Project[]
   pageInfos: PageInfo[]
@@ -86,7 +86,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     props: { skills, social, projects, pageInfos, experiences },
     // Next js will attempt to re-generate the page
     //- When a request comes in
-    //- At most once every 60 seconds === 1 min
-    revalidate: 60,
+    //- At most once every 10 seconds
+    revalidate: 10,
   }
 }
