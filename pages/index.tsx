@@ -10,11 +10,14 @@ import Skills from "../components/Skills"
 import { ArrowSmallUpIcon } from "@heroicons/react/24/outline"
 import { GetStaticProps } from "next"
 import { Experience, PageInfo, Project, Skill, Social } from "../typings"
-import { fetchPageInfo } from "../utils/fetchPageInfo"
-import { fetchExperiences } from "../utils/fetchExperiences"
-import { fetchSkills } from "../utils/fetchSkills"
-import { fetchProjects } from "../utils/fetchProjects"
-import { fetchSocials } from "../utils/fetchSocials"
+import { sanityClient } from "../utils/sanity"
+import {
+  ExperiencesQuery,
+  pageInfoQuery,
+  ProjectsQuery,
+  SkillsQuery,
+  SocialsQuery,
+} from "../utils/data"
 
 type Props = {
   skills: Skill[]
@@ -76,11 +79,12 @@ export default function Home({
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const social: Social[] = await fetchSocials()
-  const skills: Skill[] = await fetchSkills()
-  const projects: Project[] = await fetchProjects()
-  const pageInfos: PageInfo[] = await fetchPageInfo()
-  const experiences: Experience[] = await fetchExperiences()
+  const social: Social[] = await sanityClient.fetch(SocialsQuery)
+
+  const skills: Skill[] = await sanityClient.fetch(SkillsQuery)
+  const projects: Project[] = await sanityClient.fetch(ProjectsQuery)
+  const pageInfos: PageInfo[] = await sanityClient.fetch(pageInfoQuery)
+  const experiences: Experience[] = await sanityClient.fetch(ExperiencesQuery)
 
   return {
     props: { skills, social, projects, pageInfos, experiences },
