@@ -39,7 +39,7 @@ const ContactMe = ({ pageInfos }: Props) => {
         <h4 className="text-4xl font-semibold text-center">
           If you like what you see.{" "}
           <span className="underline decoration-[#7451eb]/50">
-            `Let's Talk`
+            {"Let's Talk"}
           </span>
         </h4>
         <div className="space-y-5 md:space-y-10">
