@@ -64,11 +64,11 @@ export default function Home({
         <Projects projects={projects} />
       </section>
       {/*Contact Me */}
-      <section id="contact" className="snap-start">
+      <section id="contact" className="snap-end">
         <ContactMe pageInfos={pageInfos[0]} />
       </section>
       <Link href="#hero">
-        <footer className="sticky bottom-5 w-full cursor-pointer flex justify-center items-center">
+        <footer className="sticky bottom-0 cursor-pointer flex justify-center items-center">
           <div className=" bg-[#7451eb] h-12 w-12 rounded-full filter grayscale hover:grayscale-0 transition-all">
             <ArrowSmallUpIcon className="font-bold h-12 w-12 rounded-full" />
           </div>
