@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import { Project } from "../typings"
 import { urlFor } from "../utils/sanity"
 import { useEffect, useState } from "react"
+import Link from "next/link"
 
 type Props = {
   projects: Project[]
@@ -77,12 +78,14 @@ function Projects({ projects }: Props) {
                 once: true,
               }}
             >
-              <Image
-                src={urlFor(project?.image).url()}
-                alt={project?.title}
-                width={400}
-                height={400}
-              />
+              <Link href={project?.linkToBuild} target="_blank">
+                <Image
+                  src={urlFor(project?.image).url()}
+                  alt={project?.title}
+                  width={400}
+                  height={400}
+                />
+              </Link>
             </motion.div>
             <div className="flex justify-center items-center object-fill space-x-5">
               {project?.technologies?.map((technology) => (
@@ -115,7 +118,9 @@ function Projects({ projects }: Props) {
                   Project {index + 1} / {activeProject.length}:{" "}
                 </span>
                 <br />
-                {project.title}
+                <Link href={project?.linkToBuild} target="_blank">
+                  {project.title}
+                </Link>
               </h4>
               <p className="text-sm text-center max-w-3xl">{project.summary}</p>
             </motion.div>
