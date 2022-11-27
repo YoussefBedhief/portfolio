@@ -63,9 +63,7 @@ export default function About({ pageInfos }: Props) {
         className="space-y-5 px-0 md:px-10"
       >
         <h4 className="text-4xl font-semibold text-center">
-          Here is a{" "}
-          <span className="underline decoration-[#7451eb]/50">little</span>{" "}
-          about{" "}
+          Here is a little about{" "}
           <span className="underline decoration-[#7451eb]/50">who I am</span>
         </h4>
         <p className="text-base text-center">{pageInfos?.backgroundInfo}</p>

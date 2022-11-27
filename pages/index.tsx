@@ -80,7 +80,6 @@ export default function Home({
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const social: Social[] = await sanityClient.fetch(SocialsQuery)
-
   const skills: Skill[] = await sanityClient.fetch(SkillsQuery)
   const projects: Project[] = await sanityClient.fetch(ProjectsQuery)
   const pageInfos: PageInfo[] = await sanityClient.fetch(pageInfoQuery)
